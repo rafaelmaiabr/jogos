@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>WordMatch - Jogo de Memorização de Inglês</title>
+    <meta name="title" content="LexiMatch - Jogo de Memorização de Inglês">
+    <meta name="description" content="Aprenda inglês de forma divertida com o LexiMatch! Jogo de memorização de palavras que ajuda você a expandir seu vocabulário em inglês através de associações português-inglês.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="LexiMatch - Jogo de Memorização de Inglês">
+    <meta property="og:description" content="Aprenda inglês de forma divertida com o LexiMatch! Jogo de memorização de palavras que ajuda você a expandir seu vocabulário em inglês.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="LexiMatch - Jogo de Memorização de Inglês">
+    <meta property="twitter:description" content="Aprenda inglês de forma divertida com o LexiMatch! Jogo de memorização de palavras que ajuda você a expandir seu vocabulário em inglês.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>WordMatch</h1>
+            <p class="game-description">
+                Expanda seu vocabulário em inglês de forma divertida! Associe as palavras em português com suas traduções em inglês, 
+                aumente sua sequência de acertos e avance pelos níveis.
+            </p>
+            <div id="start-screen" class="start-screen">
+                <div id="user-info-form" class="user-info-form">
+                    <input type="text" id="user-name" placeholder="Digite seu nome" required>
+                    <button id="start-btn" class="start-btn" disabled>Iniciar Jogo</button>
+                </div>
+                <div id="countdown" class="countdown"></div>
+                
+                <div id="game-history" class="game-history">
+                    <h2>Histórico de Partidas</h2>
+                    <div class="last-game">
+                        <h3>Última Partida</h3>
+                        <p>Jogador: <span id="last-player">-</span></p>
+                        <p>Data: <span id="last-date">-</span></p>
+                        <p>Pontuação: <span id="last-score">-</span></p>
+                    </div>
+                    <div class="history-table-container">
+                        <table id="history-table">
+                            <thead>
+                                <tr>
+                                    <th>Data/Hora</th>
+                                    <th>Acertos</th>
+                                    <th>Erros</th>
+                                    <th>Sequência</th>
+                                    <th>Nível</th>
+                                </tr>
+                            </thead>
+                            <tbody id="history-tbody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="game-content" class="game-content hidden">
+                <div class="game-stats">
+                    <div class="player-info">
+                        Jogador: <span id="current-player"></span>
+                    </div>
+                    <div class="timer">
+                        Tempo: <span id="timer">20</span>s
+                    </div>
+                    <div class="stats">
+                        <div class="stat">Acertos: <span id="correct-count">0</span></div>
+                        <div class="stat">Erros: <span id="error-count">0</span></div>
+                        <div class="stat">Sequência: <span id="streak-count">0</span></div>
+                    </div>
+                    <div class="info">
+                        <span>Nível: <span id="current-level">1</span></span>
+                        <button id="restart-btn">Reiniciar Jogo</button>
+                    </div>
+                </div>
+                <main class="game-container">
+                    <div id="left-column" class="column"></div>
+                    <div id="right-column" class="column"></div>
+                </main>
+            </div>
+        </header>
+    </div>
+
+    <!-- Modal de fim de jogo -->
+    <div id="end-game-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="final-score">
+                <h2>Fim de Jogo!</h2>
+                <div id="final-score-content"></div>
+            </div>
+            <div class="modal-buttons">
+                <button id="new-game-btn" class="btn-primary">Novo Jogo</button>
+                <button id="close-modal-btn" class="btn-secondary">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js" type="module"></script>
+</body>
+</html>
