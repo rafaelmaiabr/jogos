@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>VoiceMatch - Learn English Pronunciation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="../" class="home-link">
+            <i class="fas fa-home"></i>
+            Voltar para Início
+        </a>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>VoiceMatch</h1>
+            <p class="game-description">
+                Aprenda a pronunciar frases em inglês! Ouça o áudio e selecione a frase correta entre as opções.
+            </p>
+        </header>
+
+        <div class="game-content">
+            <div class="game-stats">
+                <div class="stats">
+                    <div class="stat">Acertos: <span id="correct-count">0</span></div>
+                    <div class="stat">Erros: <span id="error-count">0</span></div>
+                    <div class="stat">Sequência: <span id="streak-count">0</span></div>
+                </div>
+            </div>
+
+            <div class="audio-section">
+                <button id="play-audio" class="audio-btn">
+                    <i class="fas fa-play"></i>
+                    Play Audio
+                </button>
+            </div>
+
+            <div class="options-container">
+                <!-- Options will be added here by JavaScript -->
+            </div>
+
+            <button id="next-phrase" class="next-btn" disabled>
+                Próxima Frase
+            </button>
+        </div>
+    </div>
+
+    <script src="app.js" type="module"></script>
+</body>
+</html>
