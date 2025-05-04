@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman - Learn English</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hangman Game</h1>
+        <div class="difficulty-selector">
+            <button class="difficulty-btn" data-difficulty="easy">Easy</button>
+            <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+            <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+        </div>
+        <div class="game-area">
+            <div class="hangman-box">
+                <svg class="hangman-drawing" viewBox="0 0 200 200">
+                    <!-- Base -->
+                    <line class="draw-element base" x1="20" y1="180" x2="180" y2="180"/>
+                    <!-- Vertical pole -->
+                    <line class="draw-element pole" x1="40" y1="180" x2="40" y2="20"/>
+                    <!-- Horizontal pole -->
+                    <line class="draw-element top" x1="40" y1="20" x2="120" y2="20"/>
+                    <!-- Rope -->
+                    <line class="draw-element rope" x1="120" y1="20" x2="120" y2="40"/>
+                    <!-- Head -->
+                    <circle class="draw-element head" cx="120" cy="55" r="15" fill="none"/>
+                    <!-- Body -->
+                    <line class="draw-element body" x1="120" y1="70" x2="120" y2="120"/>
+                    <!-- Left arm -->
+                    <line class="draw-element left-arm" x1="120" y1="80" x2="100" y2="100"/>
+                    <!-- Right arm -->
+                    <line class="draw-element right-arm" x1="120" y1="80" x2="140" y2="100"/>
+                    <!-- Left leg -->
+                    <line class="draw-element left-leg" x1="120" y1="120" x2="100" y2="150"/>
+                    <!-- Right leg -->
+                    <line class="draw-element right-leg" x1="120" y1="120" x2="140" y2="150"/>
+                </svg>
+            </div>
+            <div class="game-details">
+                <p class="hint">Hint: <span></span></p>
+                <p class="remaining-guesses">Remaining Guesses: <span></span></p>
+                <p class="wrong-letters">Wrong Letters: <span></span></p>
+            </div>
+            <div class="word-display"></div>
+            <div class="keyboard"></div>
+        </div>
+        <button class="new-game-btn">New Game</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
