@@ -45,6 +45,8 @@ header {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .column {
@@ -52,17 +54,20 @@ header {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    min-width: 120px; /* Ensure minimum width for readability */
 }
 
 .word-block {
-    padding: 20px;
+    padding: 15px 10px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: transform 0.2s;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    word-wrap: break-word;
+    hyphens: auto;
 }
 
 .word-block:hover {
@@ -370,11 +375,51 @@ header {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
     .game-container {
-        flex-direction: column;
+        flex-direction: row; /* Keep two columns */
+        gap: 10px; /* Reduce gap on mobile */
+    }
+
+    .word-block {
+        padding: 12px 8px;
+        font-size: 0.9rem; /* Smaller font size on mobile */
+    }
+
+    .stats {
+        gap: 10px;
+    }
+
+    .stat {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    .game-stats {
+        gap: 10px;
+    }
+
+    .timer {
+        font-size: 1.2rem;
+        padding: 8px 16px;
+    }
+
+    .player-info {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .word-block {
+        padding: 10px 6px;
+        font-size: 0.85rem;
     }
     
-    .column {
-        width: 100%;
+    .game-container {
+        gap: 8px;
     }
 }
