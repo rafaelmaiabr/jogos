@@ -6,7 +6,8 @@
     <meta name="description" content="Biblioteca de jogos educativos para aprendizado de idiomas. Aprenda línguas de forma divertida e interativa.">
     <meta name="keywords" content="jogos educativos, aprendizado de idiomas, jogos de idiomas, educação, línguas, wordmatch">
     <meta name="author" content="EscolarTransporte">
-    <title>Jogos para Aprendizado de Idiomas</title>
+    <title>Language.win - Jogos para Aprendizado de Idiomas</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -14,10 +15,19 @@
             margin: 0 auto;
             padding: 20px;
             line-height: 1.6;
+            background-color: #f5f5f5;
         }
         .header {
             text-align: center;
             margin-bottom: 40px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .site-logo {
+            max-width: 200px;
+            margin-bottom: 20px;
         }
         .games-container {
             display: grid;
@@ -27,26 +37,42 @@
         }
         .game-card {
             border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 20px;
             text-align: center;
             transition: transform 0.3s ease;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .game-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         .game-card a {
             text-decoration: none;
             color: #2c3e50;
         }
         .game-card h3 {
-            margin: 10px 0;
+            margin: 15px 0;
+            color: #1a73e8;
+        }
+        .game-logo {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #666;
         }
     </style>
 </head>
 <body>
     <div class="header">
+        <img src="img/logo.png" alt="Language.win Logo" class="site-logo">
         <h1>Aprenda Idiomas Jogando</h1>
         <p>Bem-vindo à nossa biblioteca de jogos educativos para aprendizado de idiomas! Aqui você encontrará jogos interativos que tornam o aprendizado de línguas mais divertido e eficiente.</p>
     </div>
@@ -54,27 +80,29 @@
     <div class="games-container">
         <div class="game-card">
             <a href="WordMatch">
+                <img src="WordMatch/logo.png" alt="WordMatch Logo" class="game-logo">
                 <h3>WordMatch</h3>
                 <p>Combine palavras e seus significados para aprender vocabulário de forma divertida e eficaz.</p>
             </a>
         </div>
         <div class="game-card">
             <a href="Hangman">
+                <img src="Hangman/logo.png" alt="Hangman Logo" class="game-logo">
                 <h3>Hangman</h3>
                 <p>Adivinhe a palavra em inglês usando as dicas fornecidas. Cuidado para não deixar o bonequinho completar!</p>
             </a>
         </div>
         <div class="game-card">
             <a href="VoiceMatch">
+                <img src="VoiceMatch/logo.png" alt="VoiceMatch Logo" class="game-logo">
                 <h3>VoiceMatch</h3>
                 <p>Pratique sua compreensão auditiva! Ouça a frase em inglês e escolha a opção correta.</p>
             </a>
         </div>
-        <!-- Novos jogos serão adicionados aqui no futuro -->
     </div>
 
-    <footer style="text-align: center; margin-top: 50px;">
-        <p>© 2025 Aprendendo Brincando - Todos os direitos reservados</p>
+    <footer>
+        <p>© 2025 Language.win - Todos os direitos reservados</p>
     </footer>
 </body>
 </html>
