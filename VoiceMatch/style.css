@@ -23,6 +23,9 @@ body {
     padding: 12px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .home-link {
@@ -32,11 +35,25 @@ body {
     align-items: center;
     gap: 8px;
     font-size: 1rem;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, background-color 0.3s;
 }
 
 .home-link:hover {
     opacity: 0.8;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.feedback-link {
+    margin-left: auto;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.feedback-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .container {
