@@ -12,10 +12,10 @@ class VoiceMatch {
         // UI elements
         this.playButton = document.getElementById('play-audio');
         this.optionsContainer = document.querySelector('.options-container');
-        this.nextButton = document.getElementById('next-phrase');
         this.correctCount = document.getElementById('correct-count');
         this.errorCount = document.getElementById('error-count');
         this.streakCount = document.getElementById('streak-count');
+        this.nextButton = document.getElementById('next-phrase');
 
         // Speech synthesis
         this.synthesis = window.speechSynthesis;
@@ -33,7 +33,10 @@ class VoiceMatch {
         
         // Event listeners
         this.playButton.addEventListener('click', () => this.playAudio());
-        this.nextButton.addEventListener('click', () => this.loadNewPhrase());
+        this.nextButton.addEventListener('click', () => {
+            this.loadNewPhrase();
+            this.nextButton.disabled = true;
+        });
         
         // Start game
         this.loadNewPhrase();
