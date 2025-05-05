@@ -21,6 +21,9 @@ class VoiceMatch {
         this.synthesis = window.speechSynthesis;
         this.voice = null;
 
+        // Audio handling
+        this.audio = new Audio();
+
         this.init();
     }
 
@@ -49,13 +52,27 @@ class VoiceMatch {
         this.voice = voices.find(voice => voice.lang.startsWith('en')) || voices[0];
     }
 
-    playAudio() {
+    async playAudio() {
         if (!this.currentPhrase) return;
 
-        // Cancel any ongoing speech
-        this.synthesis.cancel();
+        // Try to play audio file if available
+        if (this.currentPhrase.audioFiles && this.currentPhrase.audioFiles.length > 0) {
+            try {
+                // Select a random audio variation
+                const randomIndex = Math.floor(Math.random() * this.currentPhrase.audioFiles.length);
+                const audioFile = this.currentPhrase.audioFiles[randomIndex];
+                
+                // Set up audio
+                this.audio.src = `audio/${audioFile}`;
+                await this.audio.play();
+                return;
+            } catch (error) {
+                console.log('Error playing audio file, falling back to speech synthesis:', error);
+            }
+        }
 
-        // Create and configure utterance
+        // Fallback to speech synthesis if no audio file or error occurred
+        this.synthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(this.currentPhrase.correct);
         utterance.voice = this.voice;
         utterance.rate = 0.9; // Slightly slower for better comprehension
