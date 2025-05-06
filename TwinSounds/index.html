@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TwinSounds - Compare English Pronunciation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NRVRBD2F');</script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRVRBD2F" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <nav class="top-nav">
+        <a href="../" class="home-link">
+            <i class="fas fa-home"></i>
+            Voltar para Início
+        </a>
+        <a href="https://forms.gle/6QYMzvD9qKZ9G1ya9" target="_blank" class="feedback-link">
+            <i class="fas fa-bug"></i>
+            Bugs/Sugestões
+        </a>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>TwinSounds</h1>
+            <p class="game-description">
+                Aprimore sua compreensão auditiva! Ouça os dois áudios e decida se são a mesma palavra ou palavras diferentes.
+            </p>
+        </header>
+
+        <div class="game-content">
+            <div class="game-stats">
+                <div class="stats">
+                    <div class="stat">Acertos: <span id="correct-count">0</span></div>
+                    <div class="stat">Erros: <span id="error-count">0</span></div>
+                    <div class="stat">Sequência: <span id="streak-count">0</span></div>
+                </div>
+                <div class="level-info">
+                    <span>Pares no pool: <span id="pairs-count">20</span></span>
+                </div>
+            </div>
+
+            <div class="audio-section">
+                <div class="audio-controls">
+                    <div class="audio-group">
+                        <button id="play-audio1-slow" class="audio-btn slow">
+                            <i class="fas fa-kiwi-bird"></i>
+                            Som 1
+                        </button>
+                        <button id="play-audio1-normal" class="audio-btn normal">
+                            <i class="fas fa-volume-up"></i>
+                            Som 1
+                        </button>
+                    </div>
+                    <div class="audio-group">
+                        <button id="play-audio2-slow" class="audio-btn slow">
+                            <i class="fas fa-kiwi-bird"></i>
+                            Som 2
+                        </button>
+                        <button id="play-audio2-normal" class="audio-btn normal">
+                            <i class="fas fa-volume-up"></i>
+                            Som 2
+                        </button>
+                    </div>
+                </div>
+                <div class="words-display hidden">
+                    <div class="word-pair">
+                        <span id="word1" class="word"></span>
+                        <span class="separator">↔</span>
+                        <span id="word2" class="word"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="choice-buttons">
+                <button id="same-word" class="choice-btn">
+                    <i class="fas fa-equals"></i>
+                    Mesma Palavra
+                </button>
+                <button id="different-words" class="choice-btn">
+                    <i class="fas fa-not-equal"></i>
+                    Palavras Diferentes
+                </button>
+            </div>
+        </div>
+
+        <!-- Modal de Progresso -->
+        <div id="progress-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="score-summary">
+                    <h2>Progresso Parcial</h2>
+                    <div class="score-details">
+                        <p>Acertos: <span id="modal-correct">0</span></p>
+                        <p>Erros: <span id="modal-errors">0</span></p>
+                        <p>Maior Sequência: <span id="modal-streak">0</span></p>
+                        <p>Total de Pares: <span id="modal-pairs">0</span></p>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button id="continue-btn" class="btn-primary">Continuar</button>
+                    <button id="restart-btn" class="btn-secondary">Reiniciar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
